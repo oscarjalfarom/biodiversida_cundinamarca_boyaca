@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Especifica el conjunto de caracteres utilizados (UTF-8) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración para la responsividad en dispositivos móviles -->
+    <title>Explorando la Biodiversidad</title> <!-- Título de la página que se muestra en la pestaña del navegador -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"> <!-- Fuente personalizada desde Google Fonts -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- Enlace a la hoja de estilos CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> <!-- Enlace a la hoja de estilos de Leaflet.js para mapas -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> <!-- Enlace a la biblioteca Leaflet.js para mapas -->
+</head>  
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li> <!-- Enlace a la sección de inicio -->
+                <li><a href="#servicios">Servicios</a></li> <!-- Enlace a la sección de servicios -->
+                <li><a href="#mapa">Mapa</a></li> <!-- Enlace a la sección de mapa -->
+                <li><a href="#contacto">Contacto</a></li> <!-- Enlace a la sección de contacto -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carrusel a pantalla completa -->
+    <section id="inicio" class="carousel-section">
+        <div class="carousel-text">
+            <h1>Explorando <span class="highlight">BIODIVERSIDAD</span> CUNDINAMARCA Y BOYACÁ</h1> <!-- Título sobre el carrusel -->
+        </div>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="images/imagen.jpeg" alt="Imagen de biodiversidad"> <!-- Imagen del carrusel -->
+            </div>
+            <div class="carousel-slide">
+                <img src="images/imagen1.jpg" alt="Imagen de biodiversidad 1"> <!-- Imagen del carrusel -->
+            </div>
+            <div class="carousel-slide">
+                <img src="images/naturaleza.jpeg" alt="Imagen de naturaleza"> <!-- Imagen del carrusel -->
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button> <!-- Botón para retroceder en el carrusel -->
+        <button class="next" onclick="moveSlide(1)">&#10095;</button> <!-- Botón para avanzar en el carrusel -->
+    </section>
+
+    <!-- Sección de servicios -->
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <img src="images/imageneducacion.jpg" alt="Taller de Educación Ambiental"> <!-- Imagen del servicio -->
+                <h3>Educación Ambiental</h3> <!-- Título del servicio -->
+                <p>Talleres educativos sobre la importancia de la biodiversidad.</p> <!-- Descripción del servicio -->
+            </div>
+          
+            <div class="service-card">
+                <img src="images/imagenObs.jpeg" alt="Observación de Flora y Fauna"> <!-- Imagen del servicio -->
+                <h3>Observación de Flora y Fauna</h3> <!-- Título del servicio -->
+                <p>Actividades para observar la diversidad de flora y fauna en su hábitat natural.</p> <!-- Descripción del servicio -->
+            </div>
+          
+            <div class="service-card">
+                <img src="images/imagenPar.jpg" alt="Visitas a Parques Naturales"> <!-- Imagen del servicio -->
+                <h3>Visitas a Parques Naturales</h3> <!-- Título del servicio -->
+                <p>Excursiones guiadas a parques naturales en Cundinamarca y Boyacá.</p> <!-- Descripción del servicio -->
+            </div>
+        </div>
+    </section>  
+
+    <!-- Sección del mapa -->
+    <section id="mapa">
+        <h2>Mapa de Regiones</h2>
+        <div id="map" style="height: 400px;"></div> <!-- Contenedor del mapa -->
+    </section>
+
+    <!-- Sección de contacto -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form id="contact-form">
+            <label for="name">Nombre Completo:</label> <!-- Etiqueta para el campo de nombre -->
+            <input type="text" id="name" name="name" placeholder="Tu nombre completo" required> <!-- Campo de entrada para el nombre -->
+      
+            <label for="email">Correo Electrónico:</label> <!-- Etiqueta para el campo de correo electrónico -->
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required> <!-- Campo de entrada para el correo electrónico -->
+      
+            <label for="message">Mensaje:</label> <!-- Etiqueta para el campo de mensaje -->
+            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" required></textarea> <!-- Área de texto para el mensaje -->
+      
+            <button type="submit">Enviar</button> <!-- Botón para enviar el formulario -->
+        </form>
+      
+        <div id="form-status"></div> <!-- Contenedor para mensajes de estado del formulario -->
+    </section>
+      
+    <footer>
+        <p>&copy; 2024 Proyecto de Biodiversidad en Cundinamarca y Boyacá</p> <!-- Información del pie de página -->
+    </footer>
+
+    <script src="js/script.js"></script> <!-- Enlace al archivo JavaScript -->
+</body>
+</html>

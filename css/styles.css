@@ -1,0 +1,332 @@
+/* Importar la fuente desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+/* Estilos generales */
+body, html {
+  font-family: 'Poppins', sans-serif; /* Fuente principal para el texto */
+  margin: 0; /* Eliminar márgenes predeterminados */
+  padding: 0; /* Eliminar rellenos predeterminados */
+  scroll-behavior: smooth; /* Desplazamiento suave en anclas */
+  background-color: #f9f9f9; /* Color de fondo de la página */
+  height: 100%; /* Altura completa para asegurar que cubra toda la pantalla */
+}
+
+/* Encabezado y menú */
+header {
+  position: fixed; /* Fijar el encabezado en la parte superior */
+  width: 100%; /* Ancho completo */
+  top: 0; /* Posicionarlo en la parte superior */
+  z-index: 1000; /* Asegurar que el menú esté por encima de otros elementos */
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el menú */
+}
+
+nav ul {
+  list-style-type: none; /* Eliminar los puntos de la lista */
+  margin: 0; /* Sin márgenes */
+  padding: 0; /* Sin rellenos */
+  display: flex; /* Flexbox para el menú horizontal */
+  justify-content: center; /* Centrar los elementos del menú */
+}
+
+nav ul li {
+  margin: 0 15px; /* Espaciado horizontal entre los elementos del menú */
+}
+
+nav ul li a {
+  color: white; /* Color del texto del enlace */
+  text-decoration: none; /* Sin subrayado */
+  padding: 15px 20px; /* Espaciado interno de los enlaces */
+  font-size: 1.2em; /* Tamaño del texto de los enlaces */
+  font-weight: 600; /* Negrita en el texto de los enlaces */
+  display: block; /* Hacer que el área del enlace sea un bloque completo */
+  transition: background-color 0.3s ease; /* Transición suave para el fondo */
+}
+
+nav ul li a:hover {
+  background-color: #4CAF50; /* Color de fondo al pasar el mouse */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Sección del carrusel */
+.carousel-section {
+  position: relative; /* Posicionamiento relativo para los elementos dentro */
+  height: 100vh; /* Altura completa de la ventana */
+  overflow: hidden; /* Ocultar el desbordamiento */
+}
+
+.carousel-container {
+  position: relative; /* Posicionamiento relativo para el contenedor del carrusel */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+}
+
+.carousel-slide {
+  display: none; /* Ocultar las diapositivas por defecto */
+}
+
+.carousel-slide img {
+  width: 100%; /* Imagen ocupa el ancho completo */
+  height: 100vh; /* Imagen ocupa la altura completa de la ventana */
+  object-fit: cover; /* Mantener la relación de aspecto sin distorsión */
+}
+
+/* Texto sobre el carrusel */
+.carousel-text {
+  position: absolute; /* Posicionamiento absoluto para el texto */
+  top: 50%; /* Centramos verticalmente */
+  left: 50%; /* Centramos horizontalmente */
+  transform: translate(-50%, -50%); /* Ajustar para centrar exactamente */
+  color: white; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  font-size: 4em; /* Tamaño de letra para pantallas grandes */
+  font-weight: 600; /* Negrita para el texto */
+  z-index: 10; /* Asegurar que el texto esté por encima de otros elementos */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
+  padding: 0 10px; /* Espacio lateral para evitar que se corte el texto */
+  overflow: hidden; /* Evitar que el texto se desborde */
+}
+
+.carousel-text .highlight {
+  color: #4CAF50; /* Color especial para el texto resaltado */
+}
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .carousel-text {
+    font-size: 2.5em; /* Tamaño de letra reducido para pantallas pequeñas */
+    padding: 0 20px; /* Aumentar padding horizontal para evitar que se corte el texto */
+  }
+}
+
+/* Botones del carrusel */
+.prev, .next {
+  cursor: pointer; /* Cambiar el cursor al pasar sobre los botones */
+  position: absolute; /* Posicionamiento absoluto para los botones */
+  top: 50%; /* Centramos verticalmente */
+  padding: 16px; /* Espacio interno */
+  color: white; /* Color del texto en los botones */
+  font-size: 2em; /* Tamaño del texto en los botones */
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo semi-transparente */
+  border: none; /* Sin borde */
+  border-radius: 50%; /* Botones circulares */
+  transition: background-color 0.3s ease; /* Transición suave para el fondo */
+  transform: translateY(-50%); /* Ajuste para centrar verticalmente */
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.6); /* Color de fondo al pasar el mouse */
+}
+
+.prev {
+  left: 20px; /* Posición del botón anterior */
+}
+
+.next {
+  right: 20px; /* Posición del botón siguiente */
+}
+
+/* Secciones de contenido */
+section {
+  min-height: 100vh; /* Altura mínima completa para la sección */
+  display: flex; /* Flexbox para centrar contenido */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  padding: 60px 20px; /* Espacio para contenido */
+  background-color: white; /* Fondo blanco para secciones */
+}
+
+section:not(.carousel-section) {
+  margin-top: 60px; /* Espacio superior para evitar solapamiento con el menú */
+  border-radius: 10px; /* Bordes redondeados */
+  max-width: 1200px; /* Ancho máximo para la sección */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+/* Hover effect en secciones */
+section:not(.carousel-section):hover {
+  transform: translateY(-5px); /* Elevación al pasar el mouse */
+}
+
+section h2 {
+  text-align: center; /* Centrar el texto del encabezado */
+  font-size: 2.5em; /* Tamaño del encabezado */
+  margin-bottom: 20px; /* Margen inferior */
+  color: #333; /* Color del texto */
+}
+
+section p {
+  font-size: 1.2em; /* Tamaño del texto del párrafo */
+  text-align: center; /* Centrar texto */
+  max-width: 800px; /* Ancho máximo para el texto */
+}
+
+/* Sección del mapa */
+#mapa {
+  background-color: #f0f0f0; /* Color de fondo para la sección del mapa */
+}
+
+#map {
+  height: 400px; /* Altura del mapa */
+  width: 100%; /* Ancho completo */
+  border-radius: 10px; /* Bordes redondeados para el mapa */
+}
+
+/* Sección de servicios */
+#servicios ul {
+  list-style-type: none; /* Eliminar puntos de la lista */
+  padding: 0; /* Sin relleno */
+}
+
+#servicios ul li {
+  padding: 10px; /* Espaciado interno */
+  font-size: 1.2em; /* Tamaño del texto de la lista */
+  color: #555; /* Color del texto */
+}
+
+#servicios ul li::before {
+  content: "✔"; /* Marcador para cada ítem */
+  color: #4CAF50; /* Color verde para el marcador */
+  margin-right: 10px; /* Espaciado a la derecha */
+}
+
+/* Estilos para el formulario de contacto */
+form {
+  display: flex; /* Flexbox para el formulario */
+  flex-direction: column; /* Columna para los campos del formulario */
+  width: 100%; /* Ancho completo */
+  max-width: 1000px; /* Ancho máximo en pantallas grandes */
+  margin: 0 auto; /* Centrar el formulario horizontalmente */
+  padding: 40px; /* Relleno interno */
+  background-color: #f9f9f9; /* Color de fondo del formulario */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+form label {
+  font-size: 1.2em; /* Tamaño del texto de las etiquetas */
+  margin-bottom: 10px; /* Espaciado inferior de las etiquetas */
+  color: #333; /* Color del texto */
+}
+
+form input, form textarea {
+  padding: 15px; /* Espacio interno de los campos */
+  margin-bottom: 20px; /* Espaciado entre campos */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1.1em; /* Tamaño del texto dentro de los campos */
+  background-color: #fff; /* Fondo blanco para los campos */
+  width: 100%; /* Ancho completo de los campos */
+  box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+}
+
+form textarea {
+  resize: vertical; /* Permitir redimensionar verticalmente */
+  min-height: 150px; /* Altura mínima para el área de texto */
+}
+
+form button {
+  background-color: #4CAF50; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  padding: 15px; /* Espacio interno del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 1.2em; /* Tamaño del texto en el botón */
+  cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Transición suave para el fondo */
+  width: 100%; /* Ancho completo del botón */
+}
+
+form button:hover {
+  background-color: #45a049; /* Color de fondo al pasar el mouse */
+}
+
+/* Mensaje de estado del formulario */
+#form-status {
+  margin-top: 20px; /* Margen superior para el mensaje */
+  color: green; /* Color del texto del mensaje */
+  font-weight: bold; /* Negrita para el mensaje */
+  text-align: center; /* Centrar texto */
+}
+
+/* Pie de página */
+footer {
+  background-color: #333; /* Color de fondo del pie de página */
+  color: white; /* Color del texto del pie de página */
+  text-align: center; /* Centrar texto */
+  padding: 20px 0; /* Espaciado vertical */
+  margin-top: 60px; /* Margen superior para separar del contenido */
+}
+
+footer p {
+  margin: 0; /* Sin márgenes */
+  font-size: 1em; /* Tamaño del texto */
+}
+
+/* Medios responsivos para dispositivos móviles */
+@media (max-width: 768px) {
+  .carousel-text {
+    font-size: 2.5em; /* Tamaño de letra reducido para pantallas pequeñas */
+    padding: 0 20px; /* Aumentar padding horizontal para que no se corte el texto */
+  }
+
+  form {
+    padding: 20px; /* Reducir el padding en pantallas pequeñas */
+  }
+
+  form input, form textarea {
+    font-size: 1em; /* Reducir el tamaño del texto en pantallas pequeñas */
+    padding: 12px; /* Ajustar padding en campos */
+  }
+
+  form button {
+    font-size: 1.1em; /* Tamaño del texto del botón */
+    padding: 12px; /* Ajustar padding en el botón */
+  }
+}
+
+/* Estilos para las tarjetas de servicios */
+.service-container {
+  display: flex; /* Usar flexbox para el contenedor de servicios */
+  justify-content: space-around; /* Espaciado uniforme entre tarjetas */
+  align-items: center; /* Centrar verticalmente */
+  flex-wrap: wrap; /* Permitir que las tarjetas se ajusten a múltiples líneas */
+  gap: 20px; /* Espaciado entre tarjetas */
+  padding: 20px 0; /* Espacio alrededor del contenedor */
+}
+
+.service-card {
+  background-color: white; /* Color de fondo para la tarjeta */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  overflow: hidden; /* Evitar que el contenido se desborde */
+  max-width: 300px; /* Ancho máximo para tarjetas */
+  text-align: center; /* Centrar contenido en la tarjeta */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos hover */
+}
+
+.service-card:hover {
+  transform: translateY(-10px); /* Elevar la tarjeta al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumentar sombra al pasar el mouse */
+}
+
+.service-card img {
+  width: 100%; /* Imagen ocupa el ancho completo de la tarjeta */
+  height: 200px; /* Altura fija para las imágenes */
+  object-fit: cover; /* Asegurar que la imagen mantenga la relación de aspecto */
+}
+
+.service-card h3 {
+  font-size: 1.5em; /* Tamaño del texto del título */
+  margin: 15px 0; /* Espaciado vertical */
+  color: #333; /* Color del texto */
+}
+
+.service-card p {
+  padding: 0 15px 20px; /* Espaciado interno */
+  font-size: 1.1em; /* Tamaño del texto de la descripción */
+  color: #555; /* Color del texto de la descripción */
+}
